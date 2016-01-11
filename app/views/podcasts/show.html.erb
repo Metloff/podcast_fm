@@ -1,0 +1,42 @@
+<div id="podcast_show">
+	<div id="show_banner">
+		<div class="wrapper_skinny">
+			<h1><%= @podcast.title %></h1>
+			<p class="description"><%= @podcast.description %></p>
+			<% unless @podcast.itunes.blank? %>
+				<a href="<%= @podcast.itunes %>" class="subscribe_link">iTunes</a>
+			<% end %>
+			<% unless @podcast.stitcher.blank? %>
+				<a href="<%= @podcast.stitcher %>" class="subscribe_link">Stitcher</a>
+			<% end %>
+			<% unless @podcast.podbay.blank? %>
+				<a href="<%= @podcast.podbay %>" class="subscribe_link">PodBay</a>
+			<% end %>
+		</div>
+	</div>
+
+	<div id="breadcrumb">
+		<%= link_to podcasts_path do %>
+			All Podcasts	
+		<% end %>
+		<a href="#"><span>/</span>The Rocketship Podcast</a>
+
+	</div>
+
+	<div id="episodes">
+		<div class="wrapper_skinny">
+			<ul class="cf">
+				<li class="cf">
+						<div class="episode_thumbnail">
+							<a href="#">
+							</a>
+						</div>
+						<div class="episode_overview">
+							<h2>OLOLOLOL</h2>
+							<p class="description">OSKJD dskdjasd aslkdj</p>
+						</div>
+					</li>
+			</ul>
+		</div>
+	</div>
+</div>
