@@ -1,15 +1,10 @@
 $white: #FFFFFF;
-$highlight: #EE7964;
-$dark: #2C3135;
+$highlight: #d2674e;
+$dark: #22292e;
 $light: #EDEFF5;
 
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: ‘Lato’, sans-serif;
-  background: $white;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .wrapper_wide {
@@ -23,22 +18,31 @@ body {
 }
 
 .wrapper_skinny {
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
 }
 
-.responsive_break {
-  white-space: nowrap;
-}
-
-.cf:before,
-.cf:after {
+.cf:before, .cf:after {
   content: " ";
   display: table;
 }
 
 .cf:after {
   clear: both;
+}
+
+#notice_wrapper {
+  width: 100%;
+  position: absolute;
+  background: rgba(208,103,82, 0.85);
+  z-index: 999;
+  p {
+    color: $white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 1.5rem 0;
+  }
 }
 
 .button {
@@ -49,18 +53,15 @@ body {
   border-radius: 2rem;
   outline: none;
   border: none;
-}
-
-.button_block {
-  display: block;
-  margin: 0 auto;
+  display: inline-block;
+  min-width: 8.5rem;
 }
 
 .button_highlight {
   background: $highlight;
   transition: background .4s ease-in-out;
   &:hover {
-   background: darken($highlight, 7.5%);
+    background: darken($highlight, 7.5%);
   }
 }
 
@@ -69,8 +70,13 @@ body {
   color: $dark;
   transition: background .4s ease-in-out;
   &:hover {
-   background: darken($white, 7.5%);
+    background: darken($white, 7.5%);
   }
+}
+
+.button_block {
+  display: block;
+  margin: 0 auto;
 }
 
 #main_header {
@@ -91,16 +97,10 @@ body {
       margin: 0;
       li {
         display: inline;
-        margin-left: 2rem;
-        position: relative;
+        margin-left: 2.5rem;
         a {
           color: $dark;
           text-decoration: none;
-          font-weight: 700;
-          font-size: 0.9rem;
-          &:hover {
-            color: $highlight;
-          }
         }
       }
     }
@@ -111,33 +111,32 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  margin-bottom: 4rem;
   h1 {
     text-align: center;
-    padding: 8.5rem 0;
-    margin: 0;
+    color: $white;
     font-size: 3rem;
     font-weight: 300;
     letter-spacing: 1px;
-    color: $white;
+    margin: 0;
+    padding: 8rem 0;
   }
 }
 
 .podcasts_banner {
   background-image: image-url("podcasts_banner.jpg");
-  margin-bottom: 4rem;
-}
-
-.sign_up_banner {
-  background-image: image-url("sign_up_banner.jpg");
 }
 
 .sign_in_banner {
   background-image: image-url("sign_in_banner.jpg");
 }
 
-.pagination:before,
-.pagination:after {
-  content: “ “;
+.sign_up_banner {
+  background-image: image-url("sign_up_banner.jpg");
+}
+
+.pagination:before, .pagination:after {
+  content: " ";
   display: table;
 }
 
@@ -147,14 +146,14 @@ body {
 
 .pagination {
   text-align: center;
-  margin: 2rem 0;
+  margin: 1rem 0 5rem 0;
   a, .previous_page, .current, .next_page {
     padding: 0.75rem 1rem;
     margin: 0 .25rem;
     border-radius: .15rem;
-    line-height: 20px;
+    line-height: 1.25;
     text-decoration: none;
-    background-color: $light;
+    background: #EDEFF5;
     font-weight: 700;
     font-size: .7rem;
     font-style: normal;
@@ -164,25 +163,16 @@ body {
       color: $white;
     }
   }
-  .disabled {
-    color: #C0C0C0;
-    &:hover {
-      color: #C0C0C0;
-    }
-  }
   .current {
     background: $highlight;
     color: $white;
   }
-}
-
-#form {
-  padding: 3rem 3.5%;
-  background: $white;
-  border-radius: .35rem;
-  .title {
-    color: $dark;
-    text-align: center;
+  .disabled {
+    color: #C0C0C0;
+    &:hover {
+      color: #C0C0C0;
+      background: #EDEFF5;
+    }
   }
 }
 
@@ -193,19 +183,20 @@ body {
 input[type="email"], input[type="text"], input[type="password"], textarea {
   width: 100%;
   height: 2.5rem;
-  padding: .5rem 1rem;
+  padding: .25rem 1rem;
   background: $light;
   border: 1px solid darken($light, 5%);
   border-radius: .35rem;
   margin-top: .5rem;
 }
 
-input[type=”file”] {
-  margin-top: .5rem;
+textarea {
+  min-height: 8rem;
+  margin-top: .5rem !important;
 }
 
-textarea {
-  height: 8rem;
+#form {
+  padding: 0 0 5rem 0;
 }
 
 @import 'normalize';
