@@ -4,9 +4,6 @@
 		<%= f.text_field :title %>
 	</div>
 
-	<br />
-	<br />
-
 	<div class='field'>
 		<%= f.label :description %>
 		<%= f.text_area :description %>
@@ -15,6 +12,11 @@
 	<div class='field'>
 		<%= f.label :episode_thumbnail %>
 		<%= f.file_field :episode_thumbnail %>
+	</div>
+
+	<div class='field'>
+		<%= f.label :mp3 %>
+		<%= f.file_field :mp3 %>
 	</div>
 	<%= f.submit class: 'button button_highlight button_block' %>
 <% end %>
