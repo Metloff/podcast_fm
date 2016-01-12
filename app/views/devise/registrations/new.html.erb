@@ -10,7 +10,12 @@
         <%= f.label :title %><br />
         <%= f.text_field :title, autofocus: true %>
       </div>
-
+      
+      <div class="field">
+        <%= f.label :thumbnail %><br />
+        <%= f.file_field :thumbnail %>
+      </div>
+      
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email %>
