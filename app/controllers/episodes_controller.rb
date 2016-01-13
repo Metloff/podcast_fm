@@ -5,7 +5,7 @@ class EpisodesController < ApplicationController
 	before_action :find_episode, only: [:show, :edit, :update, :destroy]
 
 	def show
-		@episodes = Episode.where(podcast_id: @podcast).order('created_at DESC').reject { |e| e.id == @episode.id}
+		@episodes = Episode.where(podcast_id: @podcast).order('created_at DESC').reject { |e| e.id == @episode.id}.first(3)
 	end
 
 	def new
